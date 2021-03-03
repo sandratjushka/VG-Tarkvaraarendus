@@ -1,0 +1,26 @@
+fail = open("tulemused.txt", encoding="UTF-8")
+tulemuste_tabel = []
+
+for rida in fail:
+    seti_punktid = []
+    osad = rida.split()
+    
+    for osa in osad:
+        seti_punktid.append(int(osa))
+        
+    tulemuste_tabel.append(seti_punktid)
+fail.close()
+
+x=0
+y=0
+
+for i in tulemuste_tabel:
+    if i[0] > i[1]:
+        x=x+1
+    else:
+        y=y+1
+        
+if x>y:
+    print(str("Eesti võitis "+str(x)+"-"+str(y)))
+else:
+    print(str("Soome võitis "+str(y)+"-"+str(x)))
