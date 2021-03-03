@@ -1,0 +1,16 @@
+failinimi = input("Sisestage failinimi: ")
+puugi_alam = int(input("Sisestage püügi alammõõt: "))
+fti = float(input("Sisestage Fultoni tüsedusindeks: "))
+def kala_kaal(pikkus, indeks):
+    return round((pikkus**3)*(indeks)/100)
+fail = open(failinimi)
+raskeim = []
+for i in fail:
+    raskeim.append(int(i))
+for k in raskeim:
+    if k >= int(puugi_alam):
+        print("Püütud kala kaaluga", kala_kaal(int(k), fti), "grammi")
+    elif k< int(puugi_alam):
+        print("Kala lasti vette tagasi")
+raskeim.sort()
+print("Kõige raskem püütud kala: ", kala_kaal(raskeim[-1], fti)/1000, "kg")
