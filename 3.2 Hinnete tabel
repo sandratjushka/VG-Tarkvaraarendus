@@ -1,0 +1,16 @@
+def keskmised(hinded):
+    b=0
+    k=[]
+    o=[]
+    a=0
+    while b < len(hinded):
+        for i in hinded:
+            o.append(i[0])
+            i = [round(sum(x for x in i if type(x) == int)/(len(i)-1),1)]
+            b=b+1
+            k.append(i)
+    while a < len(hinded):
+        for h in k:
+            h.insert(0,o[0+a])
+            a=a+1
+    return(k)
